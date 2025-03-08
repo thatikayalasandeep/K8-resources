@@ -1,0 +1,16 @@
+version: v1
+kind: Pod
+metadata: 
+  name: env
+
+spec:
+  containers:
+  - name: nginx
+    image: gninx
+    env: 
+    - name: course
+      value: "aws devops"
+    - name: duration
+      value: "12hrs"
+    - name: Trainer
+      value: "Siva Kumar"
