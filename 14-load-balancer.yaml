@@ -16,7 +16,7 @@ spec:
   - protocol: TCP
     port: 80 #serviceport
     targetPort: 80
-    nodePort: 3007
+    nodePort: 30007
 
 ---
 
