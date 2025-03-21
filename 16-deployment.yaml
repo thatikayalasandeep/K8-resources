@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: joindevops/deployment:1.0
+        image: tharakthatikayala/deployment:1.0.0
         ports:
         - containerPort: 80
 ---
