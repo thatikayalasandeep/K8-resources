@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: efs-dynamic
+  storageClassName: "efs-expense"
   resources:
     requests:
       storage: 5Gi
