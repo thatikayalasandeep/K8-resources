@@ -1,0 +1,10 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: efs-expense
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-app
+  fileSystemId: fs-0c5233916e27d652c
+  directoryPerms: "700"
+  basePath: "/sandeep"
