@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx-headless
   labels:
-    app:  nginx
+    app: nginx
     demo: statefulset
 spec:
   ports:
@@ -11,7 +11,7 @@ spec:
     name: web
   clusterIP: None
   selector:
-    app:  nginx
+    app: nginx
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -21,22 +21,22 @@ spec:
   selector:
     matchLabels:
       app: nginx
-      demo: statefulset #Has to match .spec.template.metadata.labels
-  serviceName:  "nginx-headless"
-  replicas: 3 #By default is 1
-  minReadySeconds: 10 #By default 0
+      demo: statefulset # has to match .spec.template.metadata.labels
+  serviceName: "nginx-headless"
+  replicas: 3 # by default is 1
+  minReadySeconds: 10 # by default is 0
   template:
     metadata:
       labels:
         app: nginx
-        demo: statefulset #it has to match .spec.selector.matchLabels
+        demo: statefulset # has to match .spec.selector.matchLabels
     spec:
-      terminationGracePeriodSeconds:  10
-      containers: 
+      terminationGracePeriodSeconds: 10
+      containers:
       - name: nginx
         image: registry.k8s.io/nginx-slim:0.24
         ports:
-        - containerPort:  80
+        - containerPort: 80
           name: web
         volumeMounts:
         - name: www
@@ -46,9 +46,8 @@ spec:
   - metadata:
       name: www
     spec:
-      accessModes:  [ "ReadWriteOnce" ]
+      accessModes: [ "ReadWriteOnce" ]
       storageClassName: "ebs-sc"
       resources:
         requests:
           storage: 1Gi
-
