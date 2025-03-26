@@ -29,9 +29,9 @@ spec:
     metadata:
       labels:
         app: nginx
-        demo: statefulset # it has to match .spec.selector.matchLabels
+        demo: statefulset #it has to match .spec.selector.matchLabels
     spec:
-      terminationFracePeriodSeconds:  10
+      terminationGracePeriodSeconds:  10
       containers: 
       - name: nginx
         image: registry.k8s.io/nginx-slim:0.24
@@ -50,5 +50,5 @@ spec:
       storageClassName: "ebs-sc"
       resources:
         requests:
-          storage:1Gi
+          storage: 1Gi
 
