@@ -16,12 +16,12 @@ spec:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: statefulset #Has to match .spec.template.metadata.labels
+  name: nginx
 spec:
   selector:
     matchLabels:
       app: nginx
-      demo: statefulset
+      demo: statefulset #Has to match .spec.template.metadata.labels
   serviceName:  "nginx-headless"
   replicas: 3 #By default is 1
   minReadySeconds: 10 #By default 0
